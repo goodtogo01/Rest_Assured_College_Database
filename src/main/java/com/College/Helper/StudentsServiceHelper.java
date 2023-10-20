@@ -3,11 +3,11 @@ package com.College.Helper;
 import com.College.Constants.EndPoints;
 import com.College.Model.Students;
 import com.College.Utils.ConfigManager;
+import com.fasterxml.jackson.core.type.TypeReference;
 import io.restassured.RestAssured;
-import io.restassured.common.mapper.TypeRef;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import jdk.internal.org.objectweb.asm.TypeReference;
+
 
 import java.lang.reflect.Type;
 import java.util.List;
@@ -34,7 +34,7 @@ public class StudentsServiceHelper {
 				.get(EndPoints.GET_ALL_STUDENTS)
 				.andReturn();
 
-		Type type = new TypeReference<List<Students>>(){}.getType();
+		Type type =new TypeReference<List<Students>>() {}.getType();
 		List<Students> studentsList = response.as(type);
 		return studentsList;
 
