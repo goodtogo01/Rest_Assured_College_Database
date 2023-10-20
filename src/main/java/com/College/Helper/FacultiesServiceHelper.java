@@ -1,6 +1,7 @@
 package com.College.Helper;
 
-public class Faculties {
+public class FacultiesServiceHelper {
 	//Fetch the data from the endpoints
+	//GET/POST/GET/PATCH/DEETE
 
 }
