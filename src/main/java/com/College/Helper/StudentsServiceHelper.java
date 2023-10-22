@@ -8,9 +8,12 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
+ 
 
 import java.lang.reflect.Type;
 import java.util.List;
+
+import org.apache.http.HttpStatus;
 
 public class StudentsServiceHelper {
 	/*
@@ -23,20 +26,64 @@ public class StudentsServiceHelper {
 	private static final String BASE_URL = ConfigManager.getInstance().getString("baseURL");
 	private static final String PORT = ConfigManager.getInstance().getString("port");
 	
-
 	public StudentsServiceHelper() {
 		RestAssured.baseURI=BASE_URL;
 		RestAssured.port=Integer.parseInt(PORT);
 		RestAssured.useRelaxedHTTPSValidation();
 	}
-	public List<Students> getAllStudents(){
+	public List<Students> getAll(String endPoint){
 		Response response = RestAssured.given().contentType(ContentType.JSON)
-				.get(EndPoints.GET_ALL_STUDENTS)
-				.andReturn();
-
+				.accept("appliction/json")
+				.when().get(endPoint)
+				.then().log().all().extract().response().andReturn();
+ 
 		Type type =new TypeReference<List<Students>>() {}.getType();
-		List<Students> studentsList = response.as(type);
+ 		List<Students> studentsList = response.as(type);
 		return studentsList;
 
+	}
+	public Response createStudent(String endpoint) {
+		Students student =new Students();
+		student.setDepartmentsGroup("Group3");
+		student.setId(3394);
+		student.setFirstName("Kazol");
+		student.setLastName("Kamar");
+		student.setGrade("6");
+		student.setEmail("kazolkamar@zsolution.com");
+		
+		Response response= RestAssured.given().contentType(ContentType.JSON)
+				.log().all()
+				.accept("application/json")
+				.when().body(student)
+				.post(endpoint)
+				.andReturn();
+		return response;
+	}
+	public Response updateStudent(Integer id, String endpoint) {
+		Students student =new Students();
+		student.setDepartmentsGroup("Group2");
+		student.setId(3394);
+		student.setFirstName("Dozol");
+		student.setLastName("Kamar");
+		student.setGrade("6");
+		student.setEmail("kazolkamar@zsolution.com");
+		
+		Response response = RestAssured.given().contentType(ContentType.JSON).accept("application/json")
+				.log().all()
+				.pathParam("id", id)
+				.when().body(student)
+				.patch(endpoint)
+				.andReturn();
+		return response;
+				
+	}
+
+	public Response deletStudentData(Integer id, String endpoint) {
+		Response response = RestAssured.given().contentType(ContentType.JSON)
+				.log().all()
+				.pathParam("id", id)
+				.when().delete(endpoint)
+				.andReturn();
+		return response;
 	}
 }

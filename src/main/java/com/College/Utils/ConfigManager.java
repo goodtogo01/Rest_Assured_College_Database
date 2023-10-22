@@ -2,6 +2,7 @@ package com.College.Utils;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Properties;
 
 
@@ -30,5 +31,4 @@ public class ConfigManager {
 	public String getString(String key) {
 		return System.getProperty(key, prop.getProperty(key));
 	}
-
 }
