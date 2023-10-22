@@ -1,6 +1,5 @@
 package com.College.Helper;
 
-import com.College.Constants.EndPoints;
 import com.College.Model.Students;
 import com.College.Utils.ConfigManager;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -84,6 +83,10 @@ public class StudentsServiceHelper {
 				.pathParam("id", id)
 				.when().delete(endpoint)
 				.andReturn();
+		assertTrure(response.getStatusCode()==HttpStatus.SC_OK, "Delete operation is succeed");
 		return response;
 	}
+
+	private void assertTrure(boolean b, String delete_operation_is_succeed) {
+			}
 }
