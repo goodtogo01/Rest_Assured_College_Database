@@ -5,8 +5,8 @@
     <classes>
       <class name="com.College.Tests.StudentsCrudTest">
         <methods>
-          <include name="deleteSingleRecord"/>
           <include name="initialization"/>
+          <include name="createStudentDataTest"/>
         </methods>
       </class> <!-- com.College.Tests.StudentsCrudTest -->
     </classes>
