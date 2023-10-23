@@ -55,7 +55,29 @@
           <version>${restVersion}</version>
           <scope>compile</scope>
       </dependency>
+ 	<dependency>
+        <groupId>net.andreinc.mockneat</groupId>
+        <artifactId>mockneat</artifactId>
+        <version>0.3.0</version>
+    </dependency>
+	 <dependency>
+  		<groupId>com.google.code.gson</groupId>
+  		<artifactId>gson</artifactId>
+  		<version>2.10.1</version>
+	</dependency>
+	<dependency>
+    <groupId>com.github.javafaker</groupId>
+    <artifactId>javafaker</artifactId>
+    <version>0.12</version>
+</dependency>
+
   </dependencies>
+<repositories>
+    <repository>
+        <id>jcenter</id>
+        <url>https://jcenter.bintray.com/</url>
+    </repository>
+</repositories>
 
   <build>
     <resources>

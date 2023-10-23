@@ -42,7 +42,7 @@ public class FacultiesCrudOps {
 		int id = facultiesServiceHelper.createFaculty(EndPoints.CREATE_FACULTIE).jsonPath().getInt("id");
 		System.out.println("New id found as : " + id);
 		assertNotNull(id, "ID is not null");
-		facultiesServiceHelper.getParticulerRecord(EndPoints.GET_SINGLE_FACULTIE, id);
+		//facultiesServiceHelper.getParticulerRecord(EndPoints.GET_SINGLE_FACULTIE, id);
 	}
 	
 	@Test

@@ -1,6 +1,11 @@
 com\College\Helper\StudentsServiceHelper.class
-com\College\Model\Faculties.class
 com\College\Model\Students.class
+com\College\Utils\RandomField.class
+com\College\Helper\StudentsServiceHelper$1.class
+com\College\Model\PhoneNumber.class
+com\College\Utils\Utilities.class
+com\College\Model\Faculties.class
+com\College\Utils\ConfigManager.class
+com\College\Helper\FacultiesServiceHelper$1.class
 com\College\Helper\FacultiesServiceHelper.class
 com\College\Constants\EndPoints.class
-com\College\Utils\Utilities.class

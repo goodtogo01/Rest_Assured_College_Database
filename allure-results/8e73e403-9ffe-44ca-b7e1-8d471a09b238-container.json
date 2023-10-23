@@ -1,0 +1,1 @@
+{"uuid":"8e73e403-9ffe-44ca-b7e1-8d471a09b238","name":"com.College.Tests.FacultiesCrudOps","children":["fa1da8f4-7c2e-4bef-a8e7-162b93191ee1"],"befores":[{"name":"initialization","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1698082657477,"stop":1698082657834}],"afters":[],"start":1698082657449,"stop":1698082659898}

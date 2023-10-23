@@ -10,15 +10,21 @@ import org.apache.http.HttpStatus;
 import com.College.Model.Faculties;
 import com.College.Model.PhoneNumber;
 import com.College.Utils.ConfigManager;
+import com.College.Utils.RandomField;
+import com.fasterxml.jackson.annotation.ObjectIdGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.cfg.MapperBuilder;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import net.andreinc.mockneat.MockNeat;
+import net.andreinc.mockneat.unit.objects.Reflect;
 
 public class FacultiesServiceHelper {
 	// Fetch the data from the endpoints
@@ -27,6 +33,10 @@ public class FacultiesServiceHelper {
 	/*
 	 * --Fetch the data from the endpoints URL, PORT -- GET/POST/GET/PATCH/DEETE --
 	 * Read the config variable -- Make request
+	 */
+	/*
+	 * MockNeat mockNeat = MockNeat.threadLocal(); Gson gson = new GsonBuilder()
+	 * .setPrettyPrinting() .create();
 	 */
 
 	private static final String BASE_URL = ConfigManager.getInstance().getString("baseURL");
@@ -62,16 +72,20 @@ public class FacultiesServiceHelper {
 	}
 
 	public Response createFaculty(String endpoint) {
+		
+	
 		PhoneNumber phoneNumber = new PhoneNumber();
-		phoneNumber.setHomePhone("1236548521");
-		phoneNumber.setCellPhone("321796542");
+	 	phoneNumber.setHomePhone(RandomField.randomPhoneNumber());
+		phoneNumber.setCellPhone(RandomField.randomPhoneNumber());
+		
+		
 		faculties = new Faculties();
 		faculties.setDepartmentsGroup("Group3");
-		faculties.setFirstName("Kazol");
-		faculties.setLastName("Kamar");
-		faculties.setId(305);
-		faculties.setEmail("kazolkamar@zsolution.com");
-		faculties.setSalary(3200);
+		faculties.setFirstName(RandomField.firstName());
+		faculties.setLastName(RandomField.lastName());
+		faculties.setId(RandomField.randomId());
+		faculties.setEmail(RandomField.emails());
+		faculties.setSalary(RandomField.randomSalary());
 		faculties.setPhoneNumber(phoneNumber);
 
 		Response response = RestAssured.given().contentType(ContentType.JSON).log().all().accept("application/json")
@@ -80,15 +94,17 @@ public class FacultiesServiceHelper {
 	}
 	public Response updatefaculties(Integer id, String endpoint) {
 		PhoneNumber phoneNumber = new PhoneNumber();
-		phoneNumber.setHomePhone("1236548521");
-		phoneNumber.setCellPhone("321796542");
+	 	phoneNumber.setHomePhone(RandomField.randomPhoneNumber());
+		phoneNumber.setCellPhone(RandomField.randomPhoneNumber());
+		
+		
 		faculties = new Faculties();
 		faculties.setDepartmentsGroup("Group3");
-		faculties.setFirstName("Shojol");
-		faculties.setLastName("Kamar");
-		faculties.setId(301);
-		faculties.setEmail("shojolkamar@zsolution.com");
-		faculties.setSalary(3250);
+		faculties.setFirstName(RandomField.firstName());
+		faculties.setLastName(RandomField.lastName());
+		faculties.setId(RandomField.randomId());
+		faculties.setEmail(RandomField.emails());
+		faculties.setSalary(RandomField.randomSalary());
 		faculties.setPhoneNumber(phoneNumber);
 		
 		Response response = RestAssured.given().contentType(ContentType.JSON).accept("application/json")
