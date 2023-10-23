@@ -3,9 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.College.Tests.StudentsCrudTest">
+      <class name="com.College.Tests.FacultiesCrudOps">
       <methods>
-      <include name="getAllStudents"> </include>
+      <include name="getFaculties"> </include>
       </methods>
       </class>
     </classes>

@@ -51,7 +51,7 @@ public class FacultiesCrudOps {
 		System.out.println("According to ID, the student details is changed "+id);
 		assertNotNull(id, "ID is not null");
 		System.out.println("After updated: ");
-		facultiesServiceHelper.getParticulerRecord(EndPoints.GET_SINGLE_FACULTIE, id);
+		//facultiesServiceHelper.getParticulerRecord(EndPoints.GET_SINGLE_FACULTIE, id);
 	}
 
 	
