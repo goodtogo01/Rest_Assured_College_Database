@@ -61,7 +61,7 @@ public class StudentsServiceHelper {
 	public Response updateStudent(Integer id, String endpoint) {
 		Students student =new Students();
 		student.setDepartmentsGroup("Group2");
-		student.setId(3394);
+		student.setId(020);
 		student.setFirstName("Dozol");
 		student.setLastName("Kamar");
 		student.setGrade("6");

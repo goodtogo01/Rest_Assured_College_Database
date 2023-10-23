@@ -8,13 +8,17 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "departmentsGroup", "firstName", "lastName", "id", "email", "salary", "phoneNumber" })
 @Generated("jsonschema2pojo")
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Faculties {
 
 	@JsonProperty("departmentsGroup")
@@ -24,11 +28,11 @@ public class Faculties {
 	@JsonProperty("lastName")
 	private String lastName;
 	@JsonProperty("id")
-	private String id;
+	private Integer id;
 	@JsonProperty("email")
 	private String email;
 	@JsonProperty("salary")
-	private String salary;
+	private Integer salary;
 	@JsonProperty("phoneNumber")
 	private PhoneNumber phoneNumber;
 	@JsonIgnore
@@ -65,12 +69,12 @@ public class Faculties {
 	}
 
 	@JsonProperty("id")
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
 	@JsonProperty("id")
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -85,12 +89,12 @@ public class Faculties {
 	}
 
 	@JsonProperty("salary")
-	public String getSalary() {
+	public Integer getSalary() {
 		return salary;
 	}
 
 	@JsonProperty("salary")
-	public void setSalary(String salary) {
+	public void setSalary(Integer salary) {
 		this.salary = salary;
 	}
 
@@ -113,5 +117,7 @@ public class Faculties {
 	public void setAdditionalProperty(String name, Object value) {
 		this.additionalProperties.put(name, value);
 	}
+
+
 
 }
