@@ -16,6 +16,13 @@ public class RandomField {
 		return id;
 	}
 
+	public static String randmGrade() {
+		int id = (min-1) + (int) (Math.random() * (((max-148) - min) +1));
+		//System.out.println(id);
+		String gread = String.valueOf(id);
+		return gread;
+	}
+
 	public static int randomSalary() {
 		int id = (min + 1500) + (int) (Math.random() * ((max - min) + 1500));
 		//System.out.println(id);

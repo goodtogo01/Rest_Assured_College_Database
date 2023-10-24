@@ -35,7 +35,15 @@ public class StudentsCrudTest {
 		assertNotNull(studentList, "List is not empty");
 		assertFalse(studentList.isEmpty(), "Student List is not true");
 	}
-	
+	@Test
+	public void getSingleRecordById() {
+		studentServiceHelper.getParticulerRecordByID(EndPoints.GET_SINGLE_STUDENT, 600);
+
+	}
+	@Test
+	public void getSingleRecordByFiresName() {
+		studentServiceHelper.getParticulerRecordByName(EndPoints.GET_STUDENT_BY_FIRST_NAME, "Rodolfo");
+	 }
 	@Test
 	public void createStudentDataTest() {
 		int id = studentServiceHelper.createStudent(EndPoints.CREATE_STUDENT).jsonPath().getInt("id");
@@ -45,14 +53,13 @@ public class StudentsCrudTest {
 	}
 	@Test
 	public void updateStudentData() {
-		int id =studentServiceHelper.updateStudent(3394, EndPoints.UPDATE_STUDENT).jsonPath().getInt("id");
+		int id =studentServiceHelper.updateStudent(38, EndPoints.UPDATE_STUDENT).jsonPath().getInt("id");
 		System.out.println("According to ID, the student details is changed "+id);
 		assertNotNull(id, "ID is not null");
 	}
-
 	@Test
 	public void deleteSingleRecord() {
-	 studentServiceHelper.deletStudentData(2221, EndPoints.DELETE_STUDENT);
+	 studentServiceHelper.deletStudentData(38, EndPoints.DELETE_STUDENT);
 		System.out.println("According to ID, the student details is changed ");
 		//assertNotNull(id, "Id is not present");
 	}

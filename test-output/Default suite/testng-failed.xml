@@ -5,8 +5,8 @@
     <classes>
       <class name="com.College.Tests.FacultiesCrudOps">
         <methods>
-          <include name="createFaculty"/>
           <include name="initialization"/>
+          <include name="getSingleRecordById"/>
         </methods>
       </class> <!-- com.College.Tests.FacultiesCrudOps -->
     </classes>

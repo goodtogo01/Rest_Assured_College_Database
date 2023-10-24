@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-23T14:12:47 EDT" name="Suite" finished-at="2023-10-23T14:12:49 EDT" duration-ms="1545">
+  <suite started-at="2023-10-24T11:33:12 EDT" name="Suite" finished-at="2023-10-24T11:33:15 EDT" duration-ms="2789">
     <groups>
     </groups>
-    <test started-at="2023-10-23T14:12:47 EDT" name="Test" finished-at="2023-10-23T14:12:49 EDT" duration-ms="1545">
-      <class name="com.College.Tests.StudentsCrudTest">
-        <test-method is-config="true" signature="initialization()[pri:0, instance:com.College.Tests.StudentsCrudTest@5890e879]" started-at="2023-10-23T14:12:48 EDT" name="initialization" finished-at="2023-10-23T14:12:48 EDT" duration-ms="379" status="PASS">
+    <test started-at="2023-10-24T11:33:12 EDT" name="Test" finished-at="2023-10-24T11:33:15 EDT" duration-ms="2789">
+      <class name="com.College.Tests.FacultiesCrudOps">
+        <test-method is-config="true" signature="initialization()[pri:0, instance:com.College.Tests.FacultiesCrudOps@231f98ef]" started-at="2023-10-24T11:33:12 EDT" name="initialization" finished-at="2023-10-24T11:33:12 EDT" duration-ms="394" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method signature="getAllStudents()[pri:0, instance:com.College.Tests.StudentsCrudTest@5890e879]" started-at="2023-10-23T14:12:48 EDT" name="getAllStudents" finished-at="2023-10-23T14:12:49 EDT" duration-ms="1068" status="PASS">
+        <test-method signature="getFaculties()[pri:0, instance:com.College.Tests.FacultiesCrudOps@231f98ef]" started-at="2023-10-24T11:33:12 EDT" name="getFaculties" finished-at="2023-10-24T11:33:14 EDT" duration-ms="1215" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getAllStudents -->
-      </class> <!-- com.College.Tests.StudentsCrudTest -->
+        </test-method> <!-- getFaculties -->
+        <test-method signature="getSingleRecordById()[pri:0, instance:com.College.Tests.FacultiesCrudOps@231f98ef]" started-at="2023-10-24T11:33:14 EDT" name="getSingleRecordById" finished-at="2023-10-24T11:33:14 EDT" duration-ms="61" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSingleRecordById -->
+        <test-method signature="getSingleRecordByFiresName()[pri:0, instance:com.College.Tests.FacultiesCrudOps@231f98ef]" started-at="2023-10-24T11:33:14 EDT" name="getSingleRecordByFiresName" finished-at="2023-10-24T11:33:14 EDT" duration-ms="618" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSingleRecordByFiresName -->
+        <test-method signature="createFaculty()[pri:0, instance:com.College.Tests.FacultiesCrudOps@231f98ef]" started-at="2023-10-24T11:33:14 EDT" name="createFaculty" finished-at="2023-10-24T11:33:15 EDT" duration-ms="302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createFaculty -->
+        <test-method signature="updateFacultyData()[pri:0, instance:com.College.Tests.FacultiesCrudOps@231f98ef]" started-at="2023-10-24T11:33:15 EDT" name="updateFacultyData" finished-at="2023-10-24T11:33:15 EDT" duration-ms="44" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateFacultyData -->
+        <test-method signature="deleteSingleRecord()[pri:0, instance:com.College.Tests.FacultiesCrudOps@231f98ef]" started-at="2023-10-24T11:33:15 EDT" name="deleteSingleRecord" finished-at="2023-10-24T11:33:15 EDT" duration-ms="33" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteSingleRecord -->
+      </class> <!-- com.College.Tests.FacultiesCrudOps -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

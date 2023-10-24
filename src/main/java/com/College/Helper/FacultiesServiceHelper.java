@@ -1,30 +1,20 @@
 package com.College.Helper;
 
 import java.lang.reflect.Type;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import org.apache.http.HttpStatus;
+import org.hamcrest.Matchers;
 
 import com.College.Model.Faculties;
 import com.College.Model.PhoneNumber;
 import com.College.Utils.ConfigManager;
 import com.College.Utils.RandomField;
-import com.fasterxml.jackson.annotation.ObjectIdGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
+
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.cfg.MapperBuilder;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import net.andreinc.mockneat.MockNeat;
-import net.andreinc.mockneat.unit.objects.Reflect;
 
 public class FacultiesServiceHelper {
 	// Fetch the data from the endpoints
@@ -38,15 +28,16 @@ public class FacultiesServiceHelper {
 	 * MockNeat mockNeat = MockNeat.threadLocal(); Gson gson = new GsonBuilder()
 	 * .setPrettyPrinting() .create();
 	 */
-
 	private static final String BASE_URL = ConfigManager.getInstance().getString("baseURL");
 	private static final String PORT = ConfigManager.getInstance().getString("port");
 	public Faculties faculties;
+	public Response response;
 
 	public FacultiesServiceHelper() {
 		RestAssured.baseURI = BASE_URL;
 		RestAssured.port = Integer.parseInt(PORT);
 		RestAssured.useRelaxedHTTPSValidation();
+
 	}
 
 	public List<Faculties> getAll(String endPoint) {
@@ -60,25 +51,32 @@ public class FacultiesServiceHelper {
 
 	}
 
- 
-	public void getParticulerRecord(String endPoint, int id)  {
-		Response response = RestAssured.given().contentType(ContentType.JSON)
-				.accept("application/json")
-				.pathParam("id", id)
-				.when().get(endPoint)
-				.then().log().all().extract().response();
+	public void getParticulerRecordByID(String endPoint, int id) {
+		response = RestAssured.given().contentType(ContentType.JSON).accept("application/json").pathParam("id", id)
+				.when().get(endPoint).then().log().all().extract().response();
+		if (response.statusCode() > 300) {
+			System.err.println("\nThis ID: \'" + id + "\' is not available or Deleted!!\n");
 
-		
+		} else if (response.statusCode() <= 201) {
+
+			System.out.println("Record Founded as per id is : " + id);
+		}
+
+	}
+
+	public void getParticulerRecordByName(String endPoint, String name) {
+
+		response = RestAssured.given().contentType(ContentType.JSON).accept("application/json")
+				.pathParam("firstName", name).when().get(endPoint).then().assertThat()
+				.body("firstName[1]", Matchers.equalTo(name.toString())).log().all().extract().response();
 	}
 
 	public Response createFaculty(String endpoint) {
-		
-	
+
 		PhoneNumber phoneNumber = new PhoneNumber();
-	 	phoneNumber.setHomePhone(RandomField.randomPhoneNumber());
+		phoneNumber.setHomePhone(RandomField.randomPhoneNumber());
 		phoneNumber.setCellPhone(RandomField.randomPhoneNumber());
-		
-		
+
 		faculties = new Faculties();
 		faculties.setDepartmentsGroup("Group3");
 		faculties.setFirstName(RandomField.firstName());
@@ -92,39 +90,31 @@ public class FacultiesServiceHelper {
 				.when().body(faculties).post(endpoint).andReturn();
 		return response;
 	}
-	public Response updatefaculties(Integer id, String endpoint) {
-		PhoneNumber phoneNumber = new PhoneNumber();
-	 	phoneNumber.setHomePhone(RandomField.randomPhoneNumber());
-		phoneNumber.setCellPhone(RandomField.randomPhoneNumber());
-		
-		
+
+	public Response updatefaculties(String endpoint, Integer id) {
+//		PhoneNumber phoneNumber = new PhoneNumber();
+//		phoneNumber.setHomePhone(RandomField.randomPhoneNumber());
+//		phoneNumber.setCellPhone(RandomField.randomPhoneNumber());
+
 		faculties = new Faculties();
-		faculties.setDepartmentsGroup("Group3");
-		faculties.setFirstName(RandomField.firstName());
-		faculties.setLastName(RandomField.lastName());
-		faculties.setId(RandomField.randomId());
-		faculties.setEmail(RandomField.emails());
-		faculties.setSalary(RandomField.randomSalary());
-		faculties.setPhoneNumber(phoneNumber);
-		
-		Response response = RestAssured.given().contentType(ContentType.JSON).accept("application/json")
-				.log().all()
-				.pathParam("id", id)
-				.when().body(faculties)
-				.patch(endpoint)
-				.andReturn();
+		// faculties.setDepartmentsGroup("Group3");
+		faculties.setFirstName("Dula");
+//		faculties.setLastName(RandomField.lastName());
+//		faculties.setId(RandomField.randomId());
+//		faculties.setEmail(RandomField.emails());
+//		faculties.setSalary(RandomField.randomSalary());
+//		faculties.setPhoneNumber(phoneNumber);
+
+		Response response = RestAssured.given().contentType(ContentType.JSON).accept("application/json").log().all()
+				.pathParam("id", id).when().body(faculties).patch(endpoint).andReturn();
 		return response;
-				
+
 	}
 
-//	public Response deletfacultiesData(Integer id, String endpoint) {
-//		Response response = RestAssured.given().contentType(ContentType.JSON)
-//				.log().all()
-//				.pathParam("id", id)
-//				.when().delete(endpoint)
-//				.andReturn();
-//		assertTrure(response.getStatusCode()==HttpStatus.SC_OK, "Delete operation is succeed");
-//		return response;
-//	}
+	public Response deletFacultyData(String endpoint, Integer id) {
+		response = RestAssured.given().contentType(ContentType.JSON).log().all().pathParam("id", id).when()
+				.delete(endpoint).thenReturn();
+		return response;
+	}
 
 }

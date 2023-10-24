@@ -2,6 +2,7 @@ package com.College.Helper;
 
 import com.College.Model.Students;
 import com.College.Utils.ConfigManager;
+import com.College.Utils.RandomField;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -13,6 +14,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 import org.apache.http.HttpStatus;
+import org.hamcrest.Matchers;
 
 public class StudentsServiceHelper {
 	/*
@@ -24,6 +26,7 @@ public class StudentsServiceHelper {
 	
 	private static final String BASE_URL = ConfigManager.getInstance().getString("baseURL");
 	private static final String PORT = ConfigManager.getInstance().getString("port");
+	Response response;
 	
 	public StudentsServiceHelper() {
 		RestAssured.baseURI=BASE_URL;
@@ -31,7 +34,7 @@ public class StudentsServiceHelper {
 		RestAssured.useRelaxedHTTPSValidation();
 	}
 	public List<Students> getAll(String endPoint){
-		Response response = RestAssured.given().contentType(ContentType.JSON)
+		 response = RestAssured.given().contentType(ContentType.JSON)
 				.accept("appliction/json")
 				.when().get(endPoint)
 				.then().log().all().extract().response().andReturn();
@@ -44,13 +47,13 @@ public class StudentsServiceHelper {
 	public Response createStudent(String endpoint) {
 		Students student =new Students();
 		student.setDepartmentsGroup("Group3");
-		student.setId(3394);
-		student.setFirstName("Kazol");
-		student.setLastName("Kamar");
-		student.setGrade("6");
-		student.setEmail("kazolkamar@zsolution.com");
+		student.setId(RandomField.randomId());
+		student.setFirstName(RandomField.firstName());
+		student.setLastName(RandomField.lastName());
+		student.setGrade(RandomField.randmGrade());
+		student.setEmail(RandomField.emails());
 		
-		Response response= RestAssured.given().contentType(ContentType.JSON)
+		 response= RestAssured.given().contentType(ContentType.JSON)
 				.log().all()
 				.accept("application/json")
 				.when().body(student)
@@ -60,14 +63,14 @@ public class StudentsServiceHelper {
 	}
 	public Response updateStudent(Integer id, String endpoint) {
 		Students student =new Students();
-		student.setDepartmentsGroup("Group2");
-		student.setId(020);
-		student.setFirstName("Dozol");
-		student.setLastName("Kamar");
-		student.setGrade("6");
-		student.setEmail("kazolkamar@zsolution.com");
+//		student.setDepartmentsGroup("Group2");
+//		student.setId(020);
+		student.setFirstName("Khanch");
+//		student.setLastName("Kamar");
+//		student.setGrade(6);
+//		student.setEmail("kazolkamar@zsolution.com");
 		
-		Response response = RestAssured.given().contentType(ContentType.JSON).accept("application/json")
+		 response = RestAssured.given().contentType(ContentType.JSON).accept("application/json")
 				.log().all()
 				.pathParam("id", id)
 				.when().body(student)
@@ -76,17 +79,36 @@ public class StudentsServiceHelper {
 		return response;
 				
 	}
-
 	public Response deletStudentData(Integer id, String endpoint) {
-		Response response = RestAssured.given().contentType(ContentType.JSON)
+		 response = RestAssured.given().contentType(ContentType.JSON)
 				.log().all()
 				.pathParam("id", id)
 				.when().delete(endpoint)
-				.andReturn();
-		assertTrure(response.getStatusCode()==HttpStatus.SC_OK, "Delete operation is succeed");
+				.thenReturn();
 		return response;
 	}
+	public void getParticulerRecordByName(String endPoint, String name) {
+		response = RestAssured.given().contentType(ContentType.JSON).accept("application/json")
+				.pathParam("firstName", name).when().get(endPoint).then().assertThat()
+				.body("firstName[1]", Matchers.equalTo(name.toString())).log().all().extract().response();
+	}
+	public void getParticulerRecordByID(String endPoint, int id) {
+		response = RestAssured.given().contentType(ContentType.JSON).accept("application/json").pathParam("id", id)
+				.when().get(endPoint).then().log().all().extract().response();
+		if (response.statusCode() >300) {
+			System.err.println("\nThis ID: \'"+id+"\' is not available or Deleted!!\n");
 
-	private void assertTrure(boolean b, String delete_operation_is_succeed) {
-			}
+		}else if(response.statusCode()<=201) {
+			
+			System.out.println("Record Founded as per id is : "+id);
+		}
+
+	}
+
+
 }
+
+
+
+
+

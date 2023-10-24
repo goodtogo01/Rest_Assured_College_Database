@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.College.Tests.StudentsCrudTest">
+      <class name="com.College.Tests.FacultiesCrudOps">
         <methods>
           <include name="initialization"/>
-          <include name="getAllStudents"/>
+          <include name="getSingleRecordByFiresName"/>
         </methods>
-      </class> <!-- com.College.Tests.StudentsCrudTest -->
+      </class> <!-- com.College.Tests.FacultiesCrudOps -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
