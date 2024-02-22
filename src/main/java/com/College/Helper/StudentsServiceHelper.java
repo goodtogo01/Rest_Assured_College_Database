@@ -1,5 +1,6 @@
 package com.College.Helper;
 
+import com.College.Constants.EndPoints;
 import com.College.Model.Students;
 import com.College.Utils.ConfigManager;
 import com.College.Utils.RandomField;
@@ -26,7 +27,7 @@ public class StudentsServiceHelper {
 	
 	private static final String BASE_URL = ConfigManager.getInstance().getString("baseURL");
 	private static final String PORT = ConfigManager.getInstance().getString("port");
-	Response response;
+	static Response response;
 	
 	public StudentsServiceHelper() {
 		RestAssured.baseURI=BASE_URL;
@@ -44,6 +45,8 @@ public class StudentsServiceHelper {
 		return studentsList;
 
 	}
+	
+
 	public Response createStudent(String endpoint) {
 		Students student =new Students();
 		student.setDepartmentsGroup("Group3");
@@ -90,7 +93,7 @@ public class StudentsServiceHelper {
 	public void getParticulerRecordByName(String endPoint, String name) {
 		response = RestAssured.given().contentType(ContentType.JSON).accept("application/json")
 				.pathParam("firstName", name).when().get(endPoint).then().assertThat()
-				.body("firstName[1]", Matchers.equalTo(name.toString())).log().all().extract().response();
+				.body("firstName[1]", Matchers.equalTo(name.toString())).extract().response();
 	}
 	public void getParticulerRecordByID(String endPoint, int id) {
 		response = RestAssured.given().contentType(ContentType.JSON).accept("application/json").pathParam("id", id)

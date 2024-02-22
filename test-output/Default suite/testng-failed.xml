@@ -6,7 +6,7 @@
       <class name="com.College.Tests.FacultiesCrudOps">
         <methods>
           <include name="initialization"/>
-          <include name="getSingleRecordById"/>
+          <include name="getSingleRecordByFiresName"/>
         </methods>
       </class> <!-- com.College.Tests.FacultiesCrudOps -->
     </classes>

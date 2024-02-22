@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TestNG:  Test</title>
+<title>TestNG:  Regression Suit for Students</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
@@ -53,13 +53,13 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-<h2 align='center'>Test</h2><table border='1' align="center">
+<h2 align='center'>Regression Suit for Students</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Feb 04 22:33:20 EST 2024</td>
+<td>Started on:</td><td>Wed Feb 21 22:44:41 EST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>3 seconds (3172 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (351 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,52 +76,11 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.College.Tests.FacultiesCrudOps.createFaculty()'><b>createFaculty</b><br>Test class: com.College.Tests.FacultiesCrudOps</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;io.restassured.specification.RequestSpecification.post()&quot; because &quot;com.College.Helper.FacultiesServiceHelper.requestSpecifications&quot; is null
-	at com.College.Helper.FacultiesServiceHelper.createFaculty(FacultiesServiceHelper.java:108)
-	at com.College.Tests.FacultiesCrudOps.createFaculty(FacultiesCrudOps.java:58)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace773302758", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace773302758'><pre>java.lang.NullPointerException: Cannot invoke &quot;io.restassured.specification.RequestSpecification.post()&quot; because &quot;com.College.Helper.FacultiesServiceHelper.requestSpecifications&quot; is null
-	at com.College.Helper.FacultiesServiceHelper.createFaculty(FacultiesServiceHelper.java:108)
-	at com.College.Tests.FacultiesCrudOps.createFaculty(FacultiesCrudOps.java:58)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>com.College.Tests.FacultiesCrudOps@7d0b7e3c</td></tr>
-<tr>
-<td title='com.College.Tests.FacultiesCrudOps.getSingleRecordByFiresName()'><b>getSingleRecordByFiresName</b><br>Test class: com.College.Tests.FacultiesCrudOps</td>
+<td title='com.College.Tests.StudentsCrudTest.getSingleRecordByFiresName()'><b>getSingleRecordByFiresName</b><br>Test class: com.College.Tests.StudentsCrudTest</td>
 <td><div><pre>java.lang.AssertionError: 1 expectation failed.
 JSON path firstName[1] doesn&apos;t match.
-Expected: Jordane
-  Actual: Lamar
+Expected: Carmel
+  Actual: Johnathan
 
 	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:58)
@@ -129,32 +88,24 @@ Expected: Jordane
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:505)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:46)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:687)
 	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:50)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
 	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:263)
 	at io.restassured.specification.ResponseSpecification$body$0.callCurrent(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:50)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:212)
 	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:110)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
-	at com.College.Helper.FacultiesServiceHelper.getParticulerRecordByName(FacultiesServiceHelper.java:81)
-	at com.College.Tests.FacultiesCrudOps.getSingleRecordByFiresName(FacultiesCrudOps.java:52)
+	at com.College.Helper.StudentsServiceHelper.getParticulerRecordByName(StudentsServiceHelper.java:96)
+	at com.College.Tests.StudentsCrudTest.getSingleRecordByFiresName(StudentsCrudTest.java:51)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace644783578", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace644783578'><pre>java.lang.AssertionError: 1 expectation failed.
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace228001921", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace228001921'><pre>java.lang.AssertionError: 1 expectation failed.
 JSON path firstName[1] doesn&apos;t match.
-Expected: Jordane
-  Actual: Lamar
+Expected: Carmel
+  Actual: Johnathan
 
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
@@ -168,9 +119,6 @@ Expected: Jordane
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:505)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:46)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:687)
 	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -180,18 +128,13 @@ Expected: Jordane
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:50)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
 	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:263)
 	at io.restassured.specification.ResponseSpecification$body$0.callCurrent(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:50)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:212)
 	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:110)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
-	at com.College.Helper.FacultiesServiceHelper.getParticulerRecordByName(FacultiesServiceHelper.java:81)
-	at com.College.Tests.FacultiesCrudOps.getSingleRecordByFiresName(FacultiesCrudOps.java:52)
+	at com.College.Helper.StudentsServiceHelper.getParticulerRecordByName(StudentsServiceHelper.java:96)
+	at com.College.Tests.StudentsCrudTest.getSingleRecordByFiresName(StudentsCrudTest.java:51)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -222,7 +165,7 @@ Expected: Jordane
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>com.College.Tests.FacultiesCrudOps@7d0b7e3c</td></tr>
+<td>com.College.Tests.StudentsCrudTest@5b218417</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -233,25 +176,30 @@ Expected: Jordane
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.College.Tests.FacultiesCrudOps.updateFacultyData()'><b>updateFacultyData</b><br>Test class: com.College.Tests.FacultiesCrudOps</td>
+<td title='com.College.Tests.StudentsCrudTest.getSingleRecordById()'><b>getSingleRecordById</b><br>Test class: com.College.Tests.StudentsCrudTest</td>
 <td></td>
 <td>0</td>
-<td>com.College.Tests.FacultiesCrudOps@7d0b7e3c</td></tr>
+<td>com.College.Tests.StudentsCrudTest@5b218417</td></tr>
 <tr>
-<td title='com.College.Tests.FacultiesCrudOps.deleteSingleRecord()'><b>deleteSingleRecord</b><br>Test class: com.College.Tests.FacultiesCrudOps</td>
+<td title='com.College.Tests.StudentsCrudTest.updateStudentData()'><b>updateStudentData</b><br>Test class: com.College.Tests.StudentsCrudTest</td>
 <td></td>
 <td>0</td>
-<td>com.College.Tests.FacultiesCrudOps@7d0b7e3c</td></tr>
+<td>com.College.Tests.StudentsCrudTest@5b218417</td></tr>
 <tr>
-<td title='com.College.Tests.FacultiesCrudOps.getFaculties()'><b>getFaculties</b><br>Test class: com.College.Tests.FacultiesCrudOps</td>
-<td></td>
-<td>1</td>
-<td>com.College.Tests.FacultiesCrudOps@7d0b7e3c</td></tr>
-<tr>
-<td title='com.College.Tests.FacultiesCrudOps.getSingleRecordById()'><b>getSingleRecordById</b><br>Test class: com.College.Tests.FacultiesCrudOps</td>
+<td title='com.College.Tests.StudentsCrudTest.deleteSingleRecord()'><b>deleteSingleRecord</b><br>Test class: com.College.Tests.StudentsCrudTest</td>
 <td></td>
 <td>0</td>
-<td>com.College.Tests.FacultiesCrudOps@7d0b7e3c</td></tr>
+<td>com.College.Tests.StudentsCrudTest@5b218417</td></tr>
+<tr>
+<td title='com.College.Tests.StudentsCrudTest.getAllStudents()'><b>getAllStudents</b><br>Test class: com.College.Tests.StudentsCrudTest</td>
+<td></td>
+<td>0</td>
+<td>com.College.Tests.StudentsCrudTest@5b218417</td></tr>
+<tr>
+<td title='com.College.Tests.StudentsCrudTest.createStudentDataTest()'><b>createStudentDataTest</b><br>Test class: com.College.Tests.StudentsCrudTest</td>
+<td></td>
+<td>0</td>
+<td>com.College.Tests.StudentsCrudTest@5b218417</td></tr>
 </table><p>
 </body>
 </html>

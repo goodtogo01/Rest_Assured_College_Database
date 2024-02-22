@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <listeners>
+    <listener class-name="com.College.Reports.ExtentReporterNG"/>
+  </listeners>
+  <test thread-count="5" name="Regression Suit for Faculties(failed)">
     <classes>
       <class name="com.College.Tests.FacultiesCrudOps">
+        <methods>
+          <include name="createFaculty"/>
+          <include name="initialization"/>
+        </methods>
+      </class> <!-- com.College.Tests.FacultiesCrudOps -->
+    </classes>
+  </test> <!-- Regression Suit for Faculties(failed) -->
+  <test thread-count="5" name="Regression Suit for Students(failed)">
+    <classes>
+      <class name="com.College.Tests.StudentsCrudTest">
         <methods>
           <include name="initialization"/>
           <include name="getSingleRecordByFiresName"/>
         </methods>
-      </class> <!-- com.College.Tests.FacultiesCrudOps -->
+      </class> <!-- com.College.Tests.StudentsCrudTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Regression Suit for Students(failed) -->
 </suite> <!-- Failed suite [Suite] -->

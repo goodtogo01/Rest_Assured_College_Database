@@ -1,18 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="6" name="Test">
-    <classes>
-      <class name="com.College.Tests.FacultiesCrudOps">
-      <methods>
-      <include name="getFaculties"> </include>
-      <include name="getSingleRecordById"> </include>
-      <include name="getSingleRecordByFiresName"> </include>
-      <include name="createFaculty"> </include>
-      <include name="updateFacultyData"> </include>
-      <include name="deleteSingleRecord"> </include>
-      </methods>
-      </class>
-    </classes>
-  </test> <!-- Test -->
+	<listeners>
+		<listener class-name="com.College.Reports.ExtentReporterNG"></listener>
+	</listeners>
+	<test thread-count="2" name="Regression Suit for Faculties">
+		<classes>
+			<class name="com.College.Tests.FacultiesCrudOps">
+				<methods>
+					<include name="getFaculties">
+					</include>
+					<include name="getSingleRecordById">
+					</include>
+					<include name="getSingleRecordByFiresName">
+					</include>
+					<include name="createFaculty">
+					</include>
+					<include name="updateFacultyData">
+					</include>
+					<include name="deleteSingleRecord">
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test thread-count="2" name="Regression Suit for Students">
+		<classes>
+			<class name="com.College.Tests.StudentsCrudTest">
+				<methods>
+					<include name="getAllStudents">
+					</include>
+					<include name="getSingleRecordById">
+					</include>
+					<include name="getSingleRecordByFiresName">
+					</include>
+					<include name="createStudentDataTest">
+					</include>
+					<include name="updateStudentData">
+					</include>
+					<include name="deleteSingleRecord">
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

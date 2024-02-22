@@ -18,8 +18,9 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <restVersion>5.0.1</restVersion>
     <testngVersion>7.7.1</testngVersion>
-    <allureVersion>2.23.0</allureVersion>
+    <extent>5.1.0</extent>
     <jacksonVersion>2.15.2</jacksonVersion>
+    
   </properties>
 
   <dependencies>
@@ -35,13 +36,7 @@
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
 	    <version>${testngVersion}</version>
-	    <scope>test</scope>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
-	<dependency>
-	    <groupId>io.qameta.allure</groupId>
-	    <artifactId>allure-testng</artifactId>
-	    <version>${allureVersion}</version>
+	    <!--<scope>test</scope>-->
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 	<dependency>
@@ -70,6 +65,17 @@
     <artifactId>javafaker</artifactId>
     <version>0.12</version>
 </dependency>
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>${extent}</version>
+</dependency>
+<dependency>
+   <groupId>com.relevantcodes</groupId>
+   <artifactId>extentreports</artifactId>
+   <version>2.41.2</version>
+</dependency>
+
 
   </dependencies>
 <repositories>

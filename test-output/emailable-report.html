@@ -9,15 +9,52 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2,789</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Regression Suit for Faculties</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">3,118</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Regression Suit for Students</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">351</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">10</th><th class="num">0</th><th class="num">0</th><th class="num attn">2</th><th class="num">3,469</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">com.College.Tests.FacultiesCrudOps</td><td><a href="#m0">createFaculty</a></td><td rowspan="1">1698161594828</td><td rowspan="1">302</td></tr><tr class="passedeven"><td><a href="#m1">deleteSingleRecord</a></td><td rowspan="1">1698161595181</td><td rowspan="1">33</td></tr><tr class="passedeven"><td><a href="#m2">getFaculties</a></td><td rowspan="1">1698161592865</td><td rowspan="1">1215</td></tr><tr class="passedeven"><td><a href="#m3">getSingleRecordByFiresName</a></td><td rowspan="1">1698161594207</td><td rowspan="1">618</td></tr><tr class="passedeven"><td><a href="#m4">getSingleRecordById</a></td><td rowspan="1">1698161594144</td><td rowspan="1">61</td></tr><tr class="passedeven"><td><a href="#m5">updateFacultyData</a></td><td rowspan="1">1698161595133</td><td rowspan="1">44</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Regression Suit for Faculties &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.College.Tests.FacultiesCrudOps</td><td><a href="#m0">createFaculty</a></td><td rowspan="1">1708573481220</td><td rowspan="1">375</td></tr><tr><th colspan="4">Regression Suit for Faculties &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.College.Tests.FacultiesCrudOps</td><td><a href="#m1">deleteSingleRecord</a></td><td rowspan="1">1708573481685</td><td rowspan="1">33</td></tr><tr class="passedeven"><td><a href="#m2">getFaculties</a></td><td rowspan="1">1708573479278</td><td rowspan="1">1198</td></tr><tr class="passedeven"><td><a href="#m3">getSingleRecordByFiresName</a></td><td rowspan="1">1708573480527</td><td rowspan="1">690</td></tr><tr class="passedeven"><td><a href="#m4">getSingleRecordById</a></td><td rowspan="1">1708573480479</td><td rowspan="1">47</td></tr><tr class="passedeven"><td><a href="#m5">updateFacultyData</a></td><td rowspan="1">1708573481599</td><td rowspan="1">84</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Regression Suit for Students &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.College.Tests.StudentsCrudTest</td><td><a href="#m6">getSingleRecordByFiresName</a></td><td rowspan="1">1708573481859</td><td rowspan="1">94</td></tr><tr><th colspan="4">Regression Suit for Students &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.College.Tests.StudentsCrudTest</td><td><a href="#m7">createStudentDataTest</a></td><td rowspan="1">1708573481956</td><td rowspan="1">51</td></tr><tr class="passedeven"><td><a href="#m8">deleteSingleRecord</a></td><td rowspan="1">1708573482063</td><td rowspan="1">49</td></tr><tr class="passedeven"><td><a href="#m9">getAllStudents</a></td><td rowspan="1">1708573481766</td><td rowspan="1">46</td></tr><tr class="passedeven"><td><a href="#m10">getSingleRecordById</a></td><td rowspan="1">1708573481813</td><td rowspan="1">46</td></tr><tr class="passedeven"><td><a href="#m11">updateStudentData</a></td><td rowspan="1">1708573482008</td><td rowspan="1">53</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">com.College.Tests.FacultiesCrudOps#createFaculty</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Regression Suit for Faculties</h2><h3 id="m0">com.College.Tests.FacultiesCrudOps#createFaculty</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;io.restassured.specification.RequestSpecification.post()&quot; because &quot;com.College.Helper.FacultiesServiceHelper.requestSpecifications&quot; is null
+	at com.College.Helper.FacultiesServiceHelper.createFaculty(FacultiesServiceHelper.java:110)
+	at com.College.Tests.FacultiesCrudOps.createFaculty(FacultiesCrudOps.java:59)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m1">com.College.Tests.FacultiesCrudOps#deleteSingleRecord</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m2">com.College.Tests.FacultiesCrudOps#getFaculties</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m3">com.College.Tests.FacultiesCrudOps#getSingleRecordByFiresName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m4">com.College.Tests.FacultiesCrudOps#getSingleRecordById</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m5">com.College.Tests.FacultiesCrudOps#updateFacultyData</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Regression Suit for Students</h2><h3 id="m6">com.College.Tests.StudentsCrudTest#getSingleRecordByFiresName</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
+JSON path firstName[1] doesn&apos;t match.
+Expected: Carmel
+  Actual: Johnathan
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:505)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:687)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:263)
+	at io.restassured.specification.ResponseSpecification$body$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:110)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
+	at com.College.Helper.StudentsServiceHelper.getParticulerRecordByName(StudentsServiceHelper.java:96)
+	at com.College.Tests.StudentsCrudTest.getSingleRecordByFiresName(StudentsCrudTest.java:51)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.College.Tests.StudentsCrudTest#createStudentDataTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.College.Tests.StudentsCrudTest#deleteSingleRecord</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.College.Tests.StudentsCrudTest#getAllStudents</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">com.College.Tests.StudentsCrudTest#getSingleRecordById</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">com.College.Tests.StudentsCrudTest#updateStudentData</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
