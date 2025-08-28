@@ -1,0 +1,45 @@
+name: Allure Report
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 17
+
+    - name: Cache Maven packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+
+    - name: Install Dependencies & Run Tests
+      run: mvn clean test
+
+    - name: Install Allure CLI
+      run: |
+        sudo apt-add-repository ppa:qameta/allure -y
+        sudo apt-get update
+        sudo apt-get install allure -y
+
+    - name: Generate Allure Report
+      run: |
+        allure generate allure-results --clean -o allure-report
+
+    - name: Upload Allure Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-report
+        path: allure-report
